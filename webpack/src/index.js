@@ -1,9 +1,12 @@
+import $ from 'jquery';
+import '../assets/css/main.css';
+
 function helloWorld() {
 	
 	var heading = document.createElement('h1');
-	heading.innerHTML = 'Hello World';
+	heading.innerHTML = 'Hello Webpack';
 
-	document.body.appendChild(heading);
+	$('body').append(heading);
 }
 
 helloWorld();
