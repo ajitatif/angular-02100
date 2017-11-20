@@ -6,6 +6,9 @@ module.exports = {
     filename: 'bundle.js',
     path: path.resolve(__dirname, 'dist')
   },
+  resolve: {
+    extensions: [ '.tsx', '.ts', '.js' ]
+  },
 
   module: {
   	rules: [
@@ -16,6 +19,11 @@ module.exports = {
   	{
   		test: /\.(png|jpeg|jpg|gif|svg)$/,
   		use: [ 'file-loader' ]
-  	}]
+  	},
+    {
+      test: /\.tsx?$/,
+      use: 'ts-loader',
+      exclude: /node_modules/
+    }]
   }
 };
