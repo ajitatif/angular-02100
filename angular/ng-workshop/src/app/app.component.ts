@@ -1,14 +1,12 @@
 import { Component, ViewChild, OnInit } from '@angular/core';
 import { Trainee } from './model/trainee';
 import { TraineeService } from './trainee.service';
-import { ServiceConfigService } from './service-config.service';
-import { ServiceConfig } from './model/service-config';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css'],
-  providers: [ TraineeService, ServiceConfigService ]
+  providers: [ TraineeService ]
 })
 export class AppComponent implements OnInit {
   appTitle = 'Gökalp\'in Evi';
@@ -21,14 +19,11 @@ export class AppComponent implements OnInit {
   @ViewChild('traineeForm')
   private traineeForm;
 
-  private serviceConfigurations: ServiceConfig[] = [];
-
-  constructor(private traineeService: TraineeService, private configurationService: ServiceConfigService) {
+  constructor(private traineeService: TraineeService) {
 
   }
 
   public ngOnInit() {
-  	this.configurationService.getAllServices().subscribe(configs => this.serviceConfigurations = configs);
   }
 
   private titleClicked(event: any) {
