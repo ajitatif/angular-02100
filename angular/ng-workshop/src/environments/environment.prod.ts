@@ -1,3 +1,4 @@
 export const environment = {
-  production: true
+  production: true,
+  configServiceUrlBase: 'http://wsconfig.domain.com'
 };

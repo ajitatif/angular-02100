@@ -11,9 +11,9 @@ import { TraineeService } from './trainee.service';
 export class AppComponent implements OnInit {
   appTitle = 'Gökalp\'in Evi';
 
-  private trainees: Trainee[] = [];
+  public trainees: Trainee[] = [];
 
-  private formModel: Trainee;
+  public formModel: Trainee;
   private selectedModelIndex: number;
 
   @ViewChild('traineeForm')
@@ -26,32 +26,32 @@ export class AppComponent implements OnInit {
   public ngOnInit() {
   }
 
-  private titleClicked(event: any) {
+  public titleClicked(event: any) {
   	alert(event);
   }
 
-  private populate() {
+  public populate() {
   	this.trainees = this.traineeService.getTrainees();
   }
 
-  private selectedTrainee(index: number, model: Trainee) {
+  public selectedTrainee(index: number, model: Trainee) {
 
   	this.selectedModelIndex = index;
   	this.formModel = JSON.parse(JSON.stringify(model));
   	console.log(this.traineeForm);
   }
 
-  private closeForm() {
+  public closeForm() {
   	this.formModel = null;
   }
 
-  private saveForm() {
+  public saveForm() {
   	this.traineeService.saveTrainee(this.formModel);
   	this.formModel = null;
   	this.selectedModelIndex = -1;
   }
 
-  private newTrainee() {
+  public newTrainee() {
   	this.selectedTrainee(this.trainees.length, new Trainee());
   }
 }
