@@ -3,6 +3,8 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs/Observable';
 import { catchError } from 'rxjs/operators';
 
+import { environment } from '../environments/environment';
+
 import { ServiceConfig } from './model/service-config';
 
 const httpOptions = {
@@ -12,7 +14,7 @@ headers: new HttpHeaders({ 'Content-Type': 'application/json' })
 @Injectable()
 export class ServiceConfigService {
 
-  private serviceUrl: string = 'http://localhost:8080/admin/';
+  private serviceUrl: string = environment.configServiceUrlBase;
 
   constructor(private httpClient: HttpClient) {  }
   

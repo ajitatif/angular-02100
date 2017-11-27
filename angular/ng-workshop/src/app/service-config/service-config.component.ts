@@ -10,7 +10,7 @@ import { ServiceConfig } from '../model/service-config';
 })
 export class ServiceConfigComponent implements OnInit {
 
-  private serviceConfigurations: ServiceConfig[] = [];
+  public serviceConfigurations: ServiceConfig[] = [];
 
   constructor(private configurationService: ServiceConfigService) { }
 
