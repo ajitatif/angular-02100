@@ -1,6 +1,7 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { WelcomeHeadingComponent } from './welcome-heading.component';
+import { CasePipe } from '../case.pipe';
 
 describe('WelcomeHeadingComponent', () => {
   let component: WelcomeHeadingComponent;
@@ -8,7 +9,7 @@ describe('WelcomeHeadingComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ WelcomeHeadingComponent ]
+      declarations: [ WelcomeHeadingComponent, CasePipe ]
     })
     .compileComponents();
   }));

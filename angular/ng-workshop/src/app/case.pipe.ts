@@ -5,7 +5,7 @@ import { Pipe, PipeTransform } from '@angular/core';
 })
 export class CasePipe implements PipeTransform {
 
-  transform(value: string, caseSpec: string): string {
+  transform(value: string, caseSpec?: string): string {
     if (!!caseSpec && caseSpec === 'lower') {
     	return value.toLowerCase();
     }
